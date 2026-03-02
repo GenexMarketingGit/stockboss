@@ -1,0 +1,12 @@
+.wp-block-stockboss-image-generator {
+    margin: 1.5rem 0;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.16);
+}
+
+.wp-block-stockboss-image-generator img {
+    display: block;
+    width: 100%;
+    height: auto;
+}

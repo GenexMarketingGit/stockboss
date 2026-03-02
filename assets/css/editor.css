@@ -1,0 +1,250 @@
+.stockboss-generator-block {
+    --stockboss-bg-1: #f8fbff;
+    --stockboss-bg-2: #eef8f2;
+    --stockboss-ink: #132239;
+    --stockboss-subtle: #52627c;
+    --stockboss-accent: #1768d8;
+    --stockboss-accent-2: #1f9c64;
+    --stockboss-surface: rgba(255, 255, 255, 0.92);
+    --stockboss-border: rgba(19, 34, 57, 0.12);
+    font-family: "Sora", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.stockboss-generator-block .stockboss-shell {
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid var(--stockboss-border);
+    background:
+        radial-gradient(circle at 8% 8%, rgba(23, 104, 216, 0.18), transparent 34%),
+        radial-gradient(circle at 92% 6%, rgba(31, 156, 100, 0.2), transparent 36%),
+        linear-gradient(140deg, var(--stockboss-bg-1), var(--stockboss-bg-2));
+    padding: 20px;
+    box-shadow: 0 14px 30px rgba(19, 34, 57, 0.14);
+    overflow: hidden;
+    animation: stockboss-appear 320ms ease;
+}
+
+.stockboss-generator-block .stockboss-shell::after {
+    content: "";
+    position: absolute;
+    inset: -120% -50% auto;
+    height: 220%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.32), transparent);
+    animation: stockboss-sheen 5.8s linear infinite;
+    pointer-events: none;
+}
+
+.stockboss-generator-block .stockboss-shell-header {
+    margin-bottom: 12px;
+}
+
+.stockboss-generator-block .stockboss-kicker {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+    color: var(--stockboss-accent);
+    font-weight: 700;
+}
+
+.stockboss-generator-block .stockboss-title {
+    margin: 6px 0;
+    font-size: 25px;
+    line-height: 1.2;
+    color: var(--stockboss-ink);
+}
+
+.stockboss-generator-block .stockboss-subtitle {
+    margin: 0;
+    color: var(--stockboss-subtle);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.stockboss-generator-block .stockboss-hover-item {
+    transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.stockboss-generator-block .stockboss-hover-item:hover {
+    transform: scale(0.95);
+}
+
+.stockboss-generator-block .stockboss-prompt-wrap,
+.stockboss-generator-block .stockboss-collapse {
+    margin-top: 12px;
+    background: var(--stockboss-surface);
+    border: 1px solid var(--stockboss-border);
+    border-radius: 13px;
+    padding: 12px;
+    backdrop-filter: blur(5px);
+}
+
+.stockboss-generator-block .components-textarea-control__input {
+    border-radius: 10px;
+}
+
+.stockboss-generator-block .stockboss-icon-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.stockboss-generator-block .stockboss-icon-button {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 999px;
+    border: 1px solid var(--stockboss-border);
+    background: #fff;
+    color: var(--stockboss-ink);
+    box-shadow: 0 6px 14px rgba(19, 34, 57, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    animation: stockboss-breath 2.5s ease-in-out infinite;
+}
+
+.stockboss-generator-block .stockboss-icon-button.is-active {
+    background: linear-gradient(110deg, var(--stockboss-accent), var(--stockboss-accent-2));
+    color: #fff;
+    border-color: transparent;
+}
+
+.stockboss-generator-block .stockboss-collapse {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    border-width: 0;
+    margin-top: 8px;
+}
+
+.stockboss-generator-block .stockboss-collapse.is-open {
+    max-height: 380px;
+    opacity: 1;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-width: 1px;
+}
+
+.stockboss-generator-block .stockboss-collapse-inner {
+    display: grid;
+    gap: 10px;
+}
+
+.stockboss-generator-block .stockboss-collapse-title {
+    margin: 0;
+    font-size: 13px;
+    color: var(--stockboss-ink);
+    font-weight: 600;
+}
+
+.stockboss-generator-block .stockboss-reference-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.stockboss-generator-block .stockboss-reference-preview {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--stockboss-border);
+    width: min(220px, 100%);
+}
+
+.stockboss-generator-block .stockboss-reference-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.stockboss-generator-block .stockboss-generate-row {
+    margin-top: 14px;
+}
+
+.stockboss-generator-block .stockboss-generate-button {
+    min-height: 46px;
+    border-radius: 999px;
+    padding: 0 22px;
+    border: none;
+    font-weight: 700;
+    background: linear-gradient(105deg, var(--stockboss-accent), var(--stockboss-accent-2));
+    box-shadow: 0 10px 20px rgba(23, 104, 216, 0.24);
+}
+
+.stockboss-generator-block .stockboss-generate-button .components-spinner {
+    margin-right: 6px;
+}
+
+.stockboss-generator-block .stockboss-preview {
+    margin-top: 14px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(19, 34, 57, 0.14);
+    box-shadow: 0 12px 26px rgba(19, 34, 57, 0.16);
+}
+
+.stockboss-generator-block .stockboss-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes stockboss-appear {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes stockboss-sheen {
+    0% {
+        transform: translateX(-70%) rotate(16deg);
+    }
+    100% {
+        transform: translateX(70%) rotate(16deg);
+    }
+}
+
+@keyframes stockboss-breath {
+    0%,
+    100% {
+        box-shadow: 0 6px 14px rgba(19, 34, 57, 0.1);
+    }
+    50% {
+        box-shadow: 0 9px 18px rgba(19, 34, 57, 0.18);
+    }
+}
+
+@media (max-width: 782px) {
+    .stockboss-generator-block .stockboss-shell {
+        padding: 16px;
+    }
+
+    .stockboss-generator-block .stockboss-title {
+        font-size: 22px;
+    }
+}
+
+.stockboss-iterate-panel {
+    display: grid;
+    gap: 10px;
+    padding-top: 6px;
+}
+
+.stockboss-iterate-panel .stockboss-iterate-card {
+    border: 1px solid rgba(19, 34, 57, 0.12);
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(145deg, #f7fbff, #f2f8ef);
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 220ms ease;
+}
+
+.stockboss-iterate-panel .stockboss-iterate-card:hover {
+    transform: scale(0.95);
+    box-shadow: 0 8px 18px rgba(19, 34, 57, 0.15);
+}
