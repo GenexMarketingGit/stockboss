@@ -3,7 +3,7 @@
  * Plugin Name: Stockboss
  * Description: Generate and standardize stock images directly in Gutenberg using OpenRouter image models.
  * Version: 0.1.6
- * Author: Stockboss
+ * Author: Genex Marketing Agency Ltd.
  * Text Domain: stockboss
  */
 
